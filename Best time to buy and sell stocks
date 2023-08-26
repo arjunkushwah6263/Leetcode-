@@ -1,0 +1,12 @@
+var maxProfit = function(prices) {
+      let max = 0;
+      let l = 0;
+  for (let r = 1; r < prices.length; r++) {
+        if (prices[l] < prices[r]) {
+          if (max < prices[r] - prices[l]) max = prices[r] - prices[l];
+        } else {
+          l = r;
+        }
+      }
+    return max
+};
