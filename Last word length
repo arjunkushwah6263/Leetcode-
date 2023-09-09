@@ -1,0 +1,14 @@
+var lengthOfLastWord = function(s) {
+    let i = s.length - 1;
+    while (s[i] === ' ') {
+        i--;
+    }
+    // i is the index of the last non-empty character
+    if (i === -1) return 0;
+    if (i === 0) return 1;
+    let j = i - 1;
+    while (j >= 0 && s[j] !== ' ') {
+        j--;
+    }
+    return i - j;
+};
