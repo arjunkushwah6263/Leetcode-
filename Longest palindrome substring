@@ -1,0 +1,26 @@
+var longestPalindrome = function(s) {
+    let rstr = '';
+    let cstr = '';
+    for(let i=0;i<s.length;i++){
+        for(let j=i;j<s.length;j++){
+            cstr = cstr.concat(s[j])
+            if(ifPalindrome(cstr)){
+                rstr = cstr.length > rstr.length ? cstr : rstr;
+            }
+        }
+        cstr = '';
+    }
+    return rstr;
+};
+
+function ifPalindrome(s){
+    let pflag = false;
+    for(let i=0;i<s.length/2;i++){
+        if(s[i] === s[s.length - i - 1]){
+            pflag = true;
+        }else{
+            return false;
+        }
+    }
+    return pflag;
+}
