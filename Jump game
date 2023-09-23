@@ -1,0 +1,10 @@
+var canJump = function(nums) {
+    var jump = 0
+    var len = nums.length;
+    for (var i = 0; i < len; i++){
+        jump = Math.max(nums[i], jump);
+        if(jump === 0 && i !== len -1 )return false;
+        jump--;
+    }
+    return true;
+};
